@@ -5,6 +5,7 @@
 ![Skinstric Project](./skinstricproject.png)
 
 ## 🛠️ Tech Stack
+
 * React — User interface development
 * TypeScript — Static type checking to JavaScript
 * Next.js — React framework for building web applications
