@@ -1,5 +1,9 @@
 </> Markdown
 
+## Skinstric Project
+
+![Skinstric Project](./skinstricproject.png)
+
 # Skinstric A. I. App
 
 🔗 **Live Demo:** [View Live Website](https://julius-skinstric-projectpearls.vercel.app/)
