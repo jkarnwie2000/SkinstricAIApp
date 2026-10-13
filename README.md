@@ -4,6 +4,12 @@
 
 ![Skinstric Project](./skinstricproject.png)
 
+## 🛠️ Tech Stack
+* React — User interface development
+* TypeScript — Static type checking to JavaScript
+* Next.js — React framework for building web applications
+* REST API — Communication with web services through REST endpoints
+
 # Skinstric A. I. App
 
 🔗 **Live Demo:** [View Live Website](https://julius-skinstric-projectpearls.vercel.app/)
