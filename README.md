@@ -6,10 +6,16 @@
 
 ## 🛠️ Tech Stack
 
-* React — User interface development
-* TypeScript — Static type checking to JavaScript
-* Next.js — React framework for building web applications
-* REST API — Communication with web services through REST endpoints
+* React — User interface development.
+* TypeScript — Static type checking to JavaScript.
+* Next.js — React framework for building web applications.
+* REST API — Communication with web services through REST endpoints.
+
+### 🚀 Key Features
+
+*  📚 AI-Powered Skin Analysis: Captures and uploads customer headshots for personalized skin analysis using generative AI technology.
+*  ⚡ Personalized Skincare Recommendations: Analyzes individual skin characteristics to recommend tailored skincare routines based on each customer's unique evaluation.
+*  🎯 Interactive User Experience: Delivers a modern, responsive interface that simplifies image uploads, AI-driven analysis, and personalized skincare guidance.
 
 # Skinstric A. I. App
 
