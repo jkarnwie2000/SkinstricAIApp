@@ -498,3 +498,34 @@ I ran performance audit and corrected the LCP element to take website performanc
 
 ## Successfully run CI awareness (GitHub Actions) using npm run lint
 
+
+## Automated Code Linting with GitHub Actions
+
+This project uses **GitHub Actions** to automatically run code linting checks whenever code is pushed to the repository or a pull request is opened or updated.
+
+### How It Works
+
+The CI (Continuous Integration) workflow, named `Skinstric CI`, runs on an Ubuntu Linux environment and performs the following steps:
+
+1. **Check Out the Repository:** Uses `actions/checkout@v4` to retrieve the project's source code.
+2. **Set Up Node.js:** Uses `actions/setup-node@v4` to configure Node.js version 20.
+3. **Install Dependencies:** Runs `npm install` to install the project's dependencies required for linting.
+4. **Run Lint Checks:** Executes `npm run lint` to identify potential code quality issues according to the linting rules configured in the project.
+
+### Workflow Triggers
+
+The workflow runs automatically on:
+
+* **Push events:** When commits are pushed to the repository.
+* **Pull request events:** When a pull request is opened or updated.
+
+### Benefits
+
+* **Automated Code Quality Checks:** Helps identify potential code issues early in the development process.
+* **Consistent Development Standards:** Applies the project's configured linting rules across code changes.
+* **Continuous Integration:** Provides automated feedback on linting results through GitHub Actions.
+* **Improved Maintainability:** Helps maintain cleaner, more consistent code throughout the project.
+
+**Note:** This workflow automates linting only. It does not explicitly run unit tests, build the application, or deploy the website. Its success depends on the `npm run lint` script being correctly configured in `package.json` and the code passing the configured linting checks.
+
+
