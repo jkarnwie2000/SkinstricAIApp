@@ -36,14 +36,14 @@ export default function PhotoPage() {
       </p>
 
       {/* Centered container for diamonds and form */}
-  <div className="relative isolate aspect-square w-[min(920px,94vw,82dvh)]">
+  <div className="relative aspect-square w-[min(920px,94vw,82dvh)]">
   {/* Rotating diamonds */}
   <Image
     src="/assets/Diamond-light-large.webp"
     alt=""
     width={700}
     height={700}
-    className="pointer-events-none absolute inset-0 h-full w-full object-contain animate-spin-slow"
+    className="pointer-events-none absolute inset-0 m-auto h-full w-full object-contain animate-spin-slow"
   />
 
   <Image
@@ -64,11 +64,12 @@ export default function PhotoPage() {
 
   {/* Form overlay */}
   <div className="absolute inset-0 z-20 flex items-center justify-center">
-    <form className="flex w-[min(680px,72%)] flex-col items-center text-center">
+    <form onSubmit={handleNameSubmit} className="flex w-[min(680px,72%)] flex-col items-center text-center">
       <label htmlFor="name">CLICK TO TYPE</label>
-
       <input
         id="name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
         placeholder="Introduce Yourself"
         className="w-full border-b border-black bg-transparent text-center text-[clamp(30px,3.4vw,64px)] outline-none"
       />
