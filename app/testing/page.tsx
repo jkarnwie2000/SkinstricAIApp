@@ -45,14 +45,7 @@ return (
     CLICK TO TYPE
   </label>
 
-  <input
-    id="name"
-    type="text"
-    value={name}
-    onChange={(event) => setName(event.target.value)}
-    placeholder="Introduce Yourself"
-    className="w-[min(417px,80vw)] placeholder:text-black text-center text-[clamp(32px,3.125vw,60px)] leading-[1.07] outline-none border-b border-black"
-  />
+  
 
   {error && <p className="mt-2 text-sm text-red-600">{error}</p>}
 
@@ -70,6 +63,15 @@ return (
     width={700}
     height={700}
     className="absolute w-full max-w-[762px] animate-spin-slow brightness-50"
+  />
+
+  <input
+    id="name"
+    type="text"
+    value={name}
+    onChange={(event) => setName(event.target.value)}
+    placeholder="Introduce Yourself"
+    className="w-[min(417px,80vw)] placeholder:text-black text-center text-[clamp(32px,3.125vw,60px)] leading-[1.07] outline-none border-b border-black"
   />
 
   <Image
