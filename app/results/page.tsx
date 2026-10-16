@@ -127,7 +127,7 @@ export default function ResultsPage() {
 
   return (
     <main className="min-h-[calc(100vh-64px)] bg-white px-6 py-8 text-[#1A1B1C] md:px-10">
-      <h1 className="text-2xl font-semibold">
+      <h1 className="text-2xl font-bold">
         DEMOGRAPHICS
       </h1>
 
@@ -146,7 +146,7 @@ export default function ResultsPage() {
                 {selected[key] || "Unknown"}
               </p>
 
-              <p className="mt-10 font-semibold">
+              <p className="mt-10 font-bold">
                 {title}
               </p>
             </div>
@@ -159,7 +159,7 @@ export default function ResultsPage() {
               key={key}
               className="border-t-2 border-black"
             >
-              <h2 className="bg-[#F3F3F3] p-4 font-semibold">
+              <h2 className="bg-[#F3F3F3] p-4 font-bold">
                 {title}
               </h2>
 
@@ -203,7 +203,7 @@ export default function ResultsPage() {
       <div className="mt-10">
         <Link
           href="/upload"
-          className="inline-block border border-black px-5 py-3 font-semibold"
+          className="inline-block border border-black px-5 py-3 font-"
         >
           BACK
         </Link>

@@ -82,7 +82,7 @@ export default function AnalysisPage() {
   return (
     <main className="min-h-screen flex items-center justify-center">
       <div className="text-center">
-        <h1 className="text-2xl font-semibold">
+        <h1 className="text-2xl font-bold">
           {status}
         </h1>
 

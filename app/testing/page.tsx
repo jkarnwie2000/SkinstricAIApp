@@ -31,11 +31,35 @@ function handleNameSubmit(event: FormEvent<HTMLFormElement>) {
 return (
 <div className="relative h-[calc(100vh-64px)] overflow-hidden flex flex-col items-center justify-center bg-white text-center">
 <div className="absolute top-[22px] left-8 w-[227px] text-left">
-  <p className="text-base leading-6 font-semibold">
+  <p className="text-base leading-6 font-bold">
     TO START ANALYSIS
   </p>
 </div>
 <div className="mb-3 text-center text-sm leading-5 animate-fade-up">
+
+<form onSubmit={handleNameSubmit} className="mb-3 text-center">
+  <label
+    htmlFor="name"
+    className="block text-sm font-bold leading-6 text-[#000000]"
+  >
+    CLICK TO TYPE
+  </label>
+
+  <input
+    id="name"
+    type="text"
+    value={name}
+    onChange={(event) => setName(event.target.value)}
+    placeholder="Introduce Yourself"
+    className="w-[min(417px,80vw)] placeholder:text-black text-center text-[clamp(32px,3.125vw,60px)] leading-[1.07] outline-none border-b border-black"
+  />
+
+  {error && <p className="mt-2 text-sm text-red-600">{error}</p>}
+
+  <button type="submit" className="mt-4 font-bold cursor-pointer">
+    PROCEED
+  </button>
+</form>
 
 </div>
 <div className="relative flex aspect-square w-[min(762px,90vw,70vh)] items-center justify-center animate-fade-up">
@@ -64,30 +88,6 @@ return (
     className="absolute w-[80%] max-w-[602px] animate-spin-fast"
   />
 
-  <form onSubmit={handleNameSubmit} className="relative z-10 flex flex-col items-center justify-center mb-3 text-center">
-  <label
-    htmlFor="name"
-    className="block text-sm font-bold leading-6 text-[#000000]"
-  >
-    CLICK TO TYPE
-  </label>
-
-  <input
-    id="name"
-    type="text"
-    value={name}
-    onChange={(event) => setName(event.target.value)}
-    placeholder="Introduce Yourself"
-    className="w-[min(417px,80vw)] placeholder:text-black text-center text-[clamp(32px,3.125vw,60px)] leading-[1.07] outline-none border-b border-black"
-  />
-
-  {error && <p className="mt-2 text-sm text-red-600">{error}</p>}
-
-  <button type="submit" className="mt-4 font-semibold cursor-pointer">
-    PROCEED
-  </button>
-</form>
-
 </div>
 
 <div className="absolute bottom-38.5 md:bottom-8 w-full flex justify-between md:px-9 px-13">
@@ -95,12 +95,12 @@ return (
 <div>
 
 <div className="relative w-12 h-12 flex items-center justify-center border border-[#1A1B1C] rotate-45 scale-[1] sm:hidden">
-<span className="rotate-[-45deg] text-xs font-semibold sm:hidden">BACK</span>
+<span className="rotate-[-45deg] text-xs font-bold sm:hidden">BACK</span>
 </div>
 <div className="group hidden sm:flex flex-row relative justify-center items-center">
 <div className="w-12 h-12 hidden sm:flex justify-center border border-[#1A1B1C] rotate-45 scale-[0.85] group-hover:scale-[0.92] ease duration-300"></div>
 <span className="absolute left-[15px] bottom-[13px] scale-[0.9] rotate-180 hidden sm:block group-hover:scale-[0.92] ease duration-300">▶</span>
-<span className="text-sm font-semibold hidden sm:block ml-6 ">BACK</span>
+<span className="text-sm font-bold hidden sm:block ml-6 ">BACK</span>
 </div>
 
 </div>
