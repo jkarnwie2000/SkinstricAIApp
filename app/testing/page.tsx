@@ -36,73 +36,45 @@ export default function PhotoPage() {
       </p>
 
       {/* Centered container for diamonds and form */}
-      <div className="relative flex aspect-square w-[min(700px,90vw,70dvh)] shrink-0 items-center justify-center">
+  <div className="relative isolate aspect-square w-[min(920px,94vw,82dvh)]">
+  {/* Rotating diamonds */}
+  <Image
+    src="/assets/Diamond-light-large.webp"
+    alt=""
+    width={700}
+    height={700}
+    className="pointer-events-none absolute inset-0 h-full w-full object-contain animate-spin-slow"
+  />
 
-        {/* Large rotating diamond */}
-        <Image
-          src="/assets/Diamond-light-large.webp"
-          alt=""
-          width={700}
-          height={700}
-          className="pointer-events-none absolute inset-0 h-full w-full object-contain animate-spin-slow brightness-50"
-        />
+  <Image
+    src="/assets/Diamond-medium-medium.webp"
+    alt=""
+    width={640}
+    height={640}
+    className="pointer-events-none absolute inset-0 m-auto h-[90%] w-[90%] object-contain animate-spin-medium"
+  />
 
-        {/* Medium rotating diamond */}
-        <Image
-          src="/assets/Diamond-medium-medium.webp"
-          alt=""
-          width={640}
-          height={640}
-          className="pointer-events-none absolute inset-0 m-auto h-[90%] w-[90%] object-contain animate-spin-medium"
-          style={{ transformOrigin: "center" }}
-        />
+  <Image
+    src="/assets/Diamond-dark-small.webp"
+    alt=""
+    width={580}
+    height={580}
+    className="pointer-events-none absolute inset-0 m-auto h-[80%] w-[80%] object-contain animate-spin-fast"
+  />
 
-        {/* Small rotating diamond */}
-        <Image
-          src="/assets/Diamond-dark-small.webp"
-          alt=""
-          width={580}
-          height={580}
-          className="pointer-events-none absolute inset-0 m-auto h-[80%] w-[80%] object-contain animate-spin-fast"
-          style={{ transformOrigin: "center" }}
-        />
+  {/* Form overlay */}
+  <div className="absolute inset-0 z-20 flex items-center justify-center">
+    <form className="flex w-[min(680px,72%)] flex-col items-center text-center">
+      <label htmlFor="name">CLICK TO TYPE</label>
 
-        {/* Form centered inside diamonds */}
-        <form
-          onSubmit={handleNameSubmit}
-          className="relative z-20 flex w-[min(417px,80%)] flex-col items-center justify-center gap-2 text-center"
-        >
-          <label
-            htmlFor="name"
-            className="text-sm font-semibold text-gray-500"
-          >
-            CLICK TO TYPE
-          </label>
-
-          <input
-            id="name"
-            type="text"
-            value={name}
-            onChange={(event) => setName(event.target.value)}
-            placeholder="Introduce Yourself"
-            className="w-full border-b border-black bg-transparent pb-1 text-center text-[clamp(23px,4vw,45px)] leading-tight text-black outline-none placeholder:text-gray-500"
-          />
-
-          {error && (
-            <p className="text-sm text-red-600">
-              {error}
-            </p>
-          )}
-
-          <button
-            type="submit"
-            className="mt-2 cursor-pointer text-sm font-semibold"
-          >
-            PROCEED
-          </button>
-        </form>
-      </div>
-
+      <input
+        id="name"
+        placeholder="Introduce Yourself"
+        className="w-full border-b border-black bg-transparent text-center text-[clamp(30px,3.4vw,64px)] outline-none"
+      />
+    </form>
+  </div>
+</div>
       {/* Back navigation */}
       <Link
         href="/"
