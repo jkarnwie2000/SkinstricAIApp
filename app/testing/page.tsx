@@ -71,7 +71,7 @@ return (
     value={name}
     onChange={(event) => setName(event.target.value)}
     placeholder="Introduce Yourself"
-    className="w-[min(417px,80vw)] placeholder:text-black text-center text-[clamp(32px,3.125vw,60px)] leading-[1.07] outline-none border-b border-black"
+    className="w-[min(417px,80vw)] placeholder:text-black z-10 text-center text-[clamp(32px,3.125vw,60px)] leading-[1.07] outline-none border-b border-black"
   />
 
   <Image
