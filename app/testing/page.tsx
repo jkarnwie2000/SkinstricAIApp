@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
@@ -6,107 +6,115 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function PhotoPage() {
+  const router = useRouter();
+  const [name, setName] = useState("");
+  const [error, setError] = useState("");
 
-const router = useRouter();
+  function handleNameSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
 
-const [name, setName] = useState("");
-const [error, setError] = useState("");
+    const cleanName = name.trim();
 
-function handleNameSubmit(event: FormEvent<HTMLFormElement>) {
-  event.preventDefault();
+    if (
+      cleanName.length < 2 ||
+      !/^[A-Za-z\s.'-]+$/.test(cleanName)
+    ) {
+      setError("Please enter a valid name using letters only.");
+      return;
+    }
 
-  const cleanName = name.trim();
-  const validName = /^[A-Za-z\s.'-]+$/;
-
-  if (cleanName.length < 2 || !validName.test(cleanName)) {
-    setError("Please enter a valid name using letters only.");
-    return;
+    setError("");
+    localStorage.setItem("name", cleanName);
+    router.push("/photo");
   }
 
-  setError("");
-  localStorage.setItem("name", cleanName);
-  router.push("/photo");
+  return (
+    <main className="relative flex min-h-[calc(100dvh-64px)] flex-col items-center justify-center overflow-hidden bg-white text-black">
+
+      <p className="absolute left-8 top-6 z-20 text-left text-base font-semibold">
+        TO START ANALYSIS
+      </p>
+
+      {/* Centered container for diamonds and form */}
+      <div className="relative flex aspect-square w-[min(700px,90vw,70dvh)] shrink-0 items-center justify-center">
+
+        {/* Large rotating diamond */}
+        <Image
+          src="/assets/Diamond-light-large.webp"
+          alt=""
+          width={700}
+          height={700}
+          className="pointer-events-none absolute inset-0 h-full w-full object-contain animate-spin-slow brightness-50"
+        />
+
+        {/* Medium rotating diamond */}
+        <Image
+          src="/assets/Diamond-medium-medium.webp"
+          alt=""
+          width={640}
+          height={640}
+          className="pointer-events-none absolute inset-0 m-auto h-[90%] w-[90%] object-contain animate-spin-medium"
+          style={{ transformOrigin: "center" }}
+        />
+
+        {/* Small rotating diamond */}
+        <Image
+          src="/assets/Diamond-dark-small.webp"
+          alt=""
+          width={580}
+          height={580}
+          className="pointer-events-none absolute inset-0 m-auto h-[80%] w-[80%] object-contain animate-spin-fast"
+          style={{ transformOrigin: "center" }}
+        />
+
+        {/* Form centered inside diamonds */}
+        <form
+          onSubmit={handleNameSubmit}
+          className="relative z-20 flex w-[min(417px,80%)] flex-col items-center justify-center gap-2 text-center"
+        >
+          <label
+            htmlFor="name"
+            className="text-sm font-semibold text-gray-500"
+          >
+            CLICK TO TYPE
+          </label>
+
+          <input
+            id="name"
+            type="text"
+            value={name}
+            onChange={(event) => setName(event.target.value)}
+            placeholder="Introduce Yourself"
+            className="w-full border-b border-black bg-transparent pb-1 text-center text-[clamp(23px,4vw,45px)] leading-tight text-black outline-none placeholder:text-gray-500"
+          />
+
+          {error && (
+            <p className="text-sm text-red-600">
+              {error}
+            </p>
+          )}
+
+          <button
+            type="submit"
+            className="mt-2 cursor-pointer text-sm font-semibold"
+          >
+            PROCEED
+          </button>
+        </form>
+      </div>
+
+      {/* Back navigation */}
+      <Link
+        href="/"
+        className="absolute bottom-8 left-8 z-20 flex items-center gap-4"
+        aria-label="Back"
+      >
+        <span className="flex h-10 w-10 rotate-45 items-center justify-center border border-black">
+          <span className="-rotate-45">◀</span>
+        </span>
+
+        <span className="font-semibold">BACK</span>
+      </Link>
+    </main>
+  );
 }
-
-return (
-<div className="relative h-[calc(100vh-64px)] overflow-hidden flex flex-col items-center justify-center bg-white text-center">
-<div className="absolute top-[22px] left-8 w-[227px] text-left">
-  <p className="text-base leading-6 font-bold">
-    TO START ANALYSIS
-  </p>
-</div>
-<div className="mb-3 text-center text-sm leading-5 animate-fade-up">
-
-<form onSubmit={handleNameSubmit} className="mb-3 text-center">
-  <label
-    htmlFor="name"
-    className="block text-sm font-bold leading-6 text-[#000000]"
-  >
-    CLICK TO TYPE
-  </label>
-
-  <input
-    id="name"
-    type="text"
-    value={name}
-    onChange={(event) => setName(event.target.value)}
-    placeholder="Introduce Yourself"
-    className="w-[min(417px,80vw)] placeholder:text-black text-center text-[clamp(32px,3.125vw,60px)] leading-[1.07] outline-none border-b border-black"
-  />
-
-  {error && <p className="mt-2 text-sm text-red-600">{error}</p>}
-
-  <button type="submit" className="mt-4 font-bold cursor-pointer">
-    PROCEED
-  </button>
-</form>
-
-</div>
-<div className="relative flex aspect-square w-[min(762px,90vw,70vh)] items-center justify-center animate-fade-up">
-  {/* Rotating background diamonds */}
-  <Image
-    src="/assets/Diamond-light-large.webp"
-    alt=""
-    width={700}
-    height={700}
-    className="absolute w-full max-w-[762px] animate-spin-slow brightness-50"
-  />
-
-  <Image
-    src="/assets/Diamond-medium-medium.webp"
-    alt=""
-    width={640}
-    height={640}
-    className="absolute w-[90%] max-w-[682px] animate-spin-medium"
-  />
-
-  <Image
-    src="/assets/Diamond-dark-small.webp"
-    alt=""
-    width={580}
-    height={580}
-    className="absolute w-[80%] max-w-[602px] animate-spin-fast"
-  />
-
-</div>
-
-<div className="absolute bottom-38.5 md:bottom-8 w-full flex justify-between md:px-9 px-13">
-    <Link className="inset-0" aria-label="Back" href="/">
-<div>
-
-<div className="relative w-12 h-12 flex items-center justify-center border border-[#1A1B1C] rotate-45 scale-[1] sm:hidden">
-<span className="rotate-[-45deg] text-xs font-bold sm:hidden">BACK</span>
-</div>
-<div className="group hidden sm:flex flex-row relative justify-center items-center">
-<div className="w-12 h-12 hidden sm:flex justify-center border border-[#1A1B1C] rotate-45 scale-[0.85] group-hover:scale-[0.92] ease duration-300"></div>
-<span className="absolute left-[15px] bottom-[13px] scale-[0.9] rotate-180 hidden sm:block group-hover:scale-[0.92] ease duration-300">▶</span>
-<span className="text-sm font-bold hidden sm:block ml-6 ">BACK</span>
-</div>
-
-</div>
-</Link>
-</div>
-</div>
- );
-
-} 
