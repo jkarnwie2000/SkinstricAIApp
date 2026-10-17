@@ -36,14 +36,14 @@ export default function PhotoPage() {
       </p>
 
       {/* Centered container for diamonds and form */}
-  <div className="relative aspect-square w-[min(920px,94vw,82dvh)]">
+  <div className="relative aspect-square w-[min(1000px,96vw,90dvh)]">
   {/* Rotating diamonds */}
   <Image
     src="/assets/Diamond-light-large.webp"
     alt=""
     width={700}
     height={700}
-    className="pointer-events-none absolute inset-0 m-auto h-full w-full object-contain animate-spin-slow"
+    className="pointer-events-none absolute inset-0 m-auto h-[120%] w-[120%] object-contain animate-spin-slow"
   />
 
   <Image
@@ -51,7 +51,7 @@ export default function PhotoPage() {
     alt=""
     width={640}
     height={640}
-    className="pointer-events-none absolute inset-0 m-auto h-[90%] w-[90%] object-contain animate-spin-medium"
+    className="pointer-events-none absolute inset-0 m-auto h-[110%] w-[110%] object-contain animate-spin-medium"
   />
 
   <Image
@@ -59,12 +59,12 @@ export default function PhotoPage() {
     alt=""
     width={580}
     height={580}
-    className="pointer-events-none absolute inset-0 m-auto h-[80%] w-[80%] object-contain animate-spin-fast"
+    className="pointer-events-none absolute inset-0 m-auto h-[100%] w-[100%] object-contain animate-spin-fast"
   />
 
   {/* Form overlay */}
   <div className="absolute inset-0 z-20 flex items-center justify-center">
-    <form onSubmit={handleNameSubmit} className="flex w-[min(680px,72%)] flex-col items-center text-center">
+    <form onSubmit={handleNameSubmit} className="flex w-[min(430px,60%)] flex-col items-center text-center">
       <label htmlFor="name"
       className="text-[#000000] block text-sm font-bold leading-6"
       >CLICK TO TYPE</label>
@@ -73,7 +73,7 @@ export default function PhotoPage() {
         value={name}
         onChange={(e) => setName(e.target.value)}
         placeholder="Introduce Yourself"
-        className="w-full border-b border-black placeholder:text-black font-bold text-center text-[clamp(30px,3.4vw,64px)] outline-none"
+        className="w-full border-b border-black placeholder:text-black font-bold text-center text-[clamp(24px,3vw,48px)] outline-none"
       />
     </form>
   </div>
