@@ -499,7 +499,7 @@ I ran performance audit and corrected the LCP element to take website performanc
 ## Successfully run CI awareness (GitHub Actions) using npm run lint
 
 
-## Automated Code Linting with GitHub Actions
+## 🤖Automated Code Linting with GitHub Actions
 
 This project uses **GitHub Actions** to automatically run code linting checks whenever code is pushed to the repository or a pull request is opened or updated.
 
