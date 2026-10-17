@@ -65,13 +65,15 @@ export default function PhotoPage() {
   {/* Form overlay */}
   <div className="absolute inset-0 z-20 flex items-center justify-center">
     <form onSubmit={handleNameSubmit} className="flex w-[min(680px,72%)] flex-col items-center text-center">
-      <label htmlFor="name">CLICK TO TYPE</label>
+      <label htmlFor="name"
+      className="text-[#000000] block text-sm font-bold leading-6"
+      >CLICK TO TYPE</label>
       <input
         id="name"
         value={name}
         onChange={(e) => setName(e.target.value)}
         placeholder="Introduce Yourself"
-        className="w-full border-b border-black bg-transparent text-center text-[clamp(30px,3.4vw,64px)] outline-none"
+        className="w-full border-b border-black placeholder:text-black font-bold text-center text-[clamp(30px,3.4vw,64px)] outline-none"
       />
     </form>
   </div>
