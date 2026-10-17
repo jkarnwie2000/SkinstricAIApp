@@ -19,7 +19,7 @@
 
 ## Skinstric A. I. App
 
-🔗 **Live Demo:** [View Live Website](https://julius-skinstric-projectpearls.vercel.app/)
+🔗 **Live Demo:** [View Live Website](https://skinstricaiapp-gold.vercel.app/)
 
 A Next.js and React application that analyzes the customer's headshot image and determines the best skincare routine for the client using A. I.
 
