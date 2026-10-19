@@ -19,7 +19,7 @@
 
 ## Skinstric A. I. App
 
-🔗 **Live Demo:** [View Live Website](https://julius-skinstric-projectpearls.vercel.app/)
+🔗 **Live Demo:** [View Live Website](https://skinstricaiapp-gold.vercel.app/)
 
 A Next.js and React application that analyzes the customer's headshot image and determines the best skincare routine for the client using A. I.
 
@@ -499,7 +499,7 @@ I ran performance audit and corrected the LCP element to take website performanc
 ## Successfully run CI awareness (GitHub Actions) using npm run lint
 
 
-## Automated Code Linting with GitHub Actions
+## 🤖Automated Code Linting with GitHub Actions
 
 This project uses **GitHub Actions** to automatically run code linting checks whenever code is pushed to the repository or a pull request is opened or updated.
 
