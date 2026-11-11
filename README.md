@@ -6,10 +6,16 @@
 
 ## 🛠️ Tech Stack
 
-* React — User interface development.
-* TypeScript — Static type checking to JavaScript.
-* Next.js — React framework for building web applications.
-* REST API — Communication with web services through REST endpoints.
+* Next.js 16 – React framework with App Router
+* React 19 – Builds the user interface
+* TypeScript – Type-safe JavaScript
+* Tailwind CSS 4 – Utility-first responsive styling
+* Lucide React – Lightweight icon library
+* REST API – Sends photos for AI analysis
+* MediaDevices API – Captures photos with the device camera
+* ESLint – Keeps code quality consistent
+* GitHub Actions – Runs automated lint checks
+* Vercel – Hosting and deployment
 
 ### 🚀 Key Features
 
