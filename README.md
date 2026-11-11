@@ -4,6 +4,8 @@
 
 ![Skinstric Project](./skinstricproject.png)
 
+
+
 ## 🛠️ Tech Stack
 
 * Next.js 16 – React framework with App Router
