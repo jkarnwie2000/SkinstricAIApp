@@ -32,7 +32,7 @@
 
 🔗 **Live Demo:** [View Live Website](https://skinstricaiapp-gold.vercel.app/)
 
-A Next.js and React application that analyzes the customer's headshot image and determines the best skincare routine for the client using A. I.
+A Next.js AI app that analyzes headshots for personalized skincare.
 
 ## Skinstric A.I. App Run Instructions
 
