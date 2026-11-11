@@ -19,10 +19,15 @@
 
 ### 🚀 Key Features
 
-*  📚 AI-Powered Skin Analysis: Captures and uploads customer headshots for personalized skin analysis using generative AI technology.
-*  ⚡ Personalized Skincare Recommendations: Analyzes individual skin characteristics to recommend tailored skincare routines based on each customer's unique evaluation.
-*  🎯 Interactive User Experience: Delivers a modern, responsive interface that simplifies image uploads, AI-driven analysis, and personalized skincare guidance.
-
+* 👤 Guided onboarding: Users enter their name and location, and inputs are checked before continuing.
+* 📸 Live camera capture: Users take a headshot in the browser, with an option to retake it.
+* 🖼️ Image upload: Users can upload a photo from their device instead of using the camera.
+* 🤖 AI face analysis: The photo is sent to Skinstric's REST API for analysis.
+* 📊 Demographics results: The app shows predicted race, age and sex, each with a confidence percentage.
+* 🎯 Interactive results: Users can click a different prediction in any category to see it instead.
+* ⚠️ Error handling: Clear messages appear for invalid input, camera problems and failed requests.
+* ✨ Animated, responsive UI: Rotating diamond graphics and smooth hover effects work on any screen size.
+  
 ## Skinstric A. I. App
 
 🔗 **Live Demo:** [View Live Website](https://skinstricaiapp-gold.vercel.app/)
